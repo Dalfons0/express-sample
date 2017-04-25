@@ -1,5 +1,5 @@
 # Typescript backend with Node.js & Express
-In this project, we’re going to build a simple https://nodejs.org/en/[Node.js] server with http://expressjs.com/[Express], a javascript framework to manage Http requests and responses, but with the difference that we are not building it on plain javascript, we are going to develop it in typescript and serve the transpiled result.
+In this project, we’re going to build a simple [Node.js](https://nodejs.org/en/) server with [Express](http://expressjs.com/), a javascript framework to manage Http requests and responses, but with the difference that we are not building it on plain javascript, we are going to develop it in typescript and serve the transpiled result.
 
 ## Initializing
 There are two ways of starting a Node.js project from scratch or cloning an existing one:
@@ -20,7 +20,7 @@ Next is to create our tsconfig.json, this file will pass default options to the 
 ```shell
 $ tsc --init
 ```
-Once created, we will add our output directory, update the EcmaScript target and add some options to help us in the development (for more information about the compiler options visit the http://www.typescriptlang.org/docs/handbook/compiler-options.html[Typescript] web page).  Also we gonna add a property include with the directory which will contain our source code, but first we have to create it with:
+Once created, we will add our output directory, update the EcmaScript target and add some options to help us in the development (for more information about the compiler options visit the [Typescript](http://www.typescriptlang.org/docs/handbook/compiler-options.html) web page).  Also we gonna add a property include with the directory which will contain our source code, but first we have to create it with:
 ```shell
 $ mkdir src
 ```
@@ -57,7 +57,7 @@ You can notice at this moment that the import fail, that’s because the express
 $ npm install --save-dev @types/express
 ```
 And if you go to the index.ts again and it’s still failing, please, keep calm and refresh the editor.
-In general the node modules are developed by and for javascript, so it’s usual that this last thing you have to repeat that operation in other modules and https://microsoft.github.io/TypeSearch/[look for] typings.
+In general the node modules are developed by and for javascript, so it’s usual that this last thing you have to repeat that operation in other modules and [look for](https://microsoft.github.io/TypeSearch/) typings.
 
 ## Express Hello world
 Once installed the framework and set it up, we’re going to add the first route to our server, using the method get, so we will add the following lines to our code:
@@ -84,7 +84,7 @@ Is worth mentioning here, that every function designed by de keyword async retur
 Only rest to build and start the server and see the result:
 
 ## Tests
-To test our project we gonna use the http://mochajs.org/[mocha] framework and the http://chaijs.com/[chai] assertion library, so our first step will be to install them, join with his respectives typings:
+To test our project we gonna use the [mocha](http://mochajs.org/framework) and the [chai](http://chaijs.com/)assertion library, so our first step will be to install them, join with his respectives typings:
 ```shell
 $ npm install -g mocha
 $ npm install --save-dev chai
@@ -136,7 +136,7 @@ This hasn’t been necessary in this example, but only because this types are in
 $ npm install --save-dev @types/node
 ```
 2.- Adding scripts to the package.json
-https://nodemon.io/[Nodemon] is a useful utility that serves an application and monitors it, looking for changes in the source file and restarting the server if some of them changes. To use them we gonna install them globally with:
+[Nodemon](https://nodemon.io/) is a useful utility that serves an application and monitors it, looking for changes in the source file and restarting the server if some of them changes. To use them we gonna install them globally with:
 ```shell
 $ npm install -g nodemon
 ```
@@ -157,4 +157,4 @@ Press Ctrl+Shift+D to display the pane in the left side of the editor. First of 
 
 This will create a directory .vscode with a file launch.json inside. Once this is created, let modify the launch.json adapting it to the typescript development, for that we will modify the program and outFiles properties and add the sourceMaps and cwd properties inside the configurations property:
 
-The final step we only have to put some stop marks on our code, start our debugger (pressing the play icon in the debug pane),  and make a petition to our server.
+The final step we only have to put some stop marks on our code, start our debugger (pressing the play icon in the debug pane), and make a petition to our server.
