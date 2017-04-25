@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "dev": "tsc -w",
     "start": "node ./out/index",
+    "serve": "nodemon ./out/index localhost 3000",
     "test": "mocha --opts mocha.opts",
     "test:auto": "mocha --opts mocha.opts --watch"
   },
