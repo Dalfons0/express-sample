@@ -3,6 +3,7 @@ In this project, we’re going to build a simple [Node.js](https://nodejs.org/en
 
 ## Initializing
 There are two ways of starting a Node.js project from scratch or cloning an existing one:
+
 a) Scratch:
 
 If you choose this way, first of all you have to create your project folder and move into, once into, initialize the project as a git repository and add a remote branch:
@@ -27,6 +28,7 @@ $ mkdir src
 ```
 Being the actual tsconfig.json something like this:
 ![tsconfig](images/tsconfig.PNG)
+
 Finally, we gonna add a script to build our javascript files, adding the next line inside the scripts property in the package.json:
 ```javascript
 "build": "tsc"
@@ -78,6 +80,7 @@ If we do to our browser and go to http://localhost:3000/ and see something like 
 ![hellobrowser](images/browser-helloworld.PNG)
 
 Now we gonna add some logic to our example. First create a logic.ts file in your project and export a default object that has a property function:
+
 ![baselogic](images/baselogic.PNG)
 
 But this is not a realistic operation, because in the real world our logic would have asynchronous functions so let increment a bit of complexity adding an asynchronous function and waiting for it with async/await:
