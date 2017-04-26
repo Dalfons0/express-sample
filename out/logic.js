@@ -22,7 +22,7 @@ exports.default = {
 let asyncOp = (time) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("Hello world!");
+            resolve("Hello logic world!");
         }, time);
     });
 };
