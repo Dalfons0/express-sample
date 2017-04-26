@@ -27,7 +27,7 @@ Once created, we will add our output directory, update the EcmaScript target and
 $ mkdir src
 ```
 Being the actual tsconfig.json something like this:
-![tsconfig](images/tsconfig.PNG)
+![tsconfig](images/tsconfig.PNG?raw=true)
 
 Finally, we gonna add a script to build our javascript files, adding the next line inside the scripts property in the package.json:
 ```javascript
