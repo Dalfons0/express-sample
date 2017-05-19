@@ -17,8 +17,8 @@ Once initialized as a git repository, we should initialize the repository as a j
 ```shell
 $ npm init
 ```
-This command will create a package.json, the function of this file will be principally specify the dependencies of our project, because the final purpose of our project is to be a functional server not to publish it as an npm package.
-Next is to create our tsconfig.json, this file will pass default options to the transpiler every time you transpile your .ts files, for doing that execute following command:
+This command will create a ```package.json```, the function of this file will be principally specify the dependencies of our project, because the final purpose of our project is to be a functional server not to publish it as an npm package.
+Next is to create our ```tsconfig.json```, this file will pass default options to the transpiler every time you transpile your .ts files, for doing that execute following command:
 ```shell
 $ tsc --init
 ```
@@ -26,10 +26,12 @@ Once created, we will add our output directory, update the EcmaScript target and
 ```shell
 $ mkdir src
 ```
-Being the actual tsconfig.json something like this:
-![tsconfig](images/tsconfig.PNG?raw=true)
+Being the actual ```tsconfig.json``` something like this:
+![tsconfig](images/tsconfig.PNG)
 
-Finally, we gonna add a script to build our javascript files, adding the next line inside the scripts property in the package.json:
+Be careful with the options displayed in the image, because to use the strict compiler flag, your typescript version should be at least 2.3.0.
+
+Finally, we gonna add a script to build our javascript files, adding the next line inside the scripts property in the ```package.json```:
 ```javascript
 "build": "tsc"
 ```
@@ -48,11 +50,11 @@ $ npm install
 The last one is the most important, which gonna install all the dependencies for your project, and if you’re working in a collaborative project, maybe you should execute this command when you do a git pull and your project fails, before execute someone else.
 
 ## Install Express 
-First of all, we must install the framework in our directory and add it to the package.json dependencies, for that we gonna use the command:
+First of all, we must install the framework in our directory and add it to the ```package.json``` dependencies, for that we gonna use the command:
 ```shell
 $ npm install express --save
 ```
-Later, we are gonna create an index.ts and import the our project using the import reserved word something like this:
+Later, we are gonna create an ```index.ts``` and import the our project using the import reserved word something like this:
 ```javascript
 import * as express from 'express'
 ```
@@ -67,7 +69,7 @@ In general the node modules are developed by and for javascript, so it’s usual
 Once installed the framework and set it up, we’re going to add the first route to our server, using the method get, so we will add the following lines to our code:
 ![helloworld](images/express-helloworld.PNG)
 
-And before testing, testing it we gonna add a script to our package.json for start the server:
+And before testing, testing it we gonna add a script to our ```package.json``` for start the server:
 ```javascript
 "start": "node ./out/index"
 ```
@@ -89,12 +91,12 @@ But this is not a realistic operation, because in the real world our logic would
 To see the effects of an asynchronous operation we have added a function that returns a promise that is resolved with a specified duration and handled by an await. Before test this logic we are gonna update our route to call this method and resolve properly the operation, and it will look like this:
 ![express-logic](images/express-hellologic.PNG)
 
-Is worth mentioning here, that every function designed by de keyword async returns a promise, so you can then() the result of the mentioned function.
+Is worth mentioning here, that every function designed by de keyword async returns a promise, so you can ```.then()``` the result of the mentioned function.
 Only rest to build and start the server and see the result:
 ![logicbrowser](images/browser-hellologic.PNG)
 
 ## Tests
-To test our project we gonna use the [mocha](http://mochajs.org/framework) and the [chai](http://chaijs.com/)assertion library, so our first step will be to install them, join with his respectives typings:
+To test our project we gonna use the [mocha](http://mochajs.org/framework) and the [chai](http://chaijs.com/) assertion library, so our first step will be to install them, join with his respectives typings:
 ```shell
 $ npm install -g mocha
 $ npm install --save-dev chai
@@ -113,7 +115,7 @@ Before executing the tests we have to make some setups, first of all we have to 
 ```shell
 $ npm install -g ts-node
 ```
-But this dummy interpreter don’t know where are located the types that you added before, so you have to indicated that explicitly adding the following property to the compiler options in the tsconfig.json:
+But this dummy interpreter don’t know where are located the types that you added before, so you have to indicated that explicitly adding the following property to the compiler options in the ```tsconfig.json```:
 ```javascript
 "typeRoots": [ "node_modules/@types" ]
 ```
@@ -124,7 +126,7 @@ Later, create a mocha.opts file with the following lines:
 --watch-extensions ts
 test/**/*.ts
 ```
-And add some scripts to the package.json:
+And add some scripts to the ```package.json```:
 ```javascript
 "test": "mocha --opts mocha.opts",
 "test:auto": "mocha --opts mocha.opts --watch"
@@ -148,7 +150,7 @@ This hasn’t been necessary in this example, but only because this types are in
 ```shell
 $ npm install --save-dev @types/node
 ```
-2.- Adding scripts to the package.json
+2.- Adding scripts to the ```package.json```
 
 [Nodemon](https://nodemon.io/) is a useful utility that serves an application and monitors it, looking for changes in the source file and restarting the server if some of them changes. To use them we gonna install them globally with:
 ```shell
@@ -161,7 +163,7 @@ And add the following line to the scripts in the package.json:
 Next we only have to run npm run serve in a separate console:
 ![nodemon](images/nodemon.PNG)
 
-But note, that the server that we start is in index.js, and we are developing in typescript, so if we don’t compile again our changes, nodemon don’t gonna restart the server, to help with this we gonna add another command that will compile the .ts files if some of them change, so add the following line to the package.json scripts:
+But note, that the server that we start is in ```index.js```, and we are developing in typescript, so if we don’t compile again our changes, nodemon don’t gonna restart the server, to help with this we gonna add another command that will compile the .ts files if some of them change, so add the following line to the ```package.json``` scripts:
 ```javascript
 "dev": "tsc -w"
 ```
@@ -171,9 +173,9 @@ Only we have to execute the npm run dev in a new console, a it will wait for cha
 3.- Visual Studio Code debugging
 
 Press Ctrl+Shift+D to display the pane in the left side of the editor. First of all we have it add a debug configuration, clicking to the gear, upside of the debug pane, and selecting Node.js in the drop-down list.
-![debugging](images/debugging.PNG)
+![debugging](images/debugging.png)
 
-This will create a directory .vscode with a file launch.json inside. Once this is created, let modify the launch.json adapting it to the typescript development, for that we will modify the program and outFiles properties and add the sourceMaps and cwd properties inside the configurations property:
+This will create a directory .vscode with a file ```launch.json``` inside. Once this is created, let modify the ```launch.json``` adapting it to the typescript development, for that we will modify the program and outFiles properties and add the sourceMaps and cwd properties inside the configurations property:
 ![launchjson](images/launchjson.PNG)
 
 The final step we only have to put some stop marks on our code, start our debugger (pressing the play icon in the debug pane), and make a petition to our server.
